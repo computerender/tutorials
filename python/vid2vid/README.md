@@ -4,6 +4,7 @@ Code for styling video using stable diffusion.
 
   
 ![example](https://i.imgur.com/FMd9RvH.gif)
+<img src="/python/vid2vid/example.gif?raw=true" width="256px">
 
 ## 1. Setup
 You can install the python dependencies by running:
