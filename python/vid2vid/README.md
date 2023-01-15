@@ -1,6 +1,6 @@
 # vid2vid 
   
-Code for styling video using stable diffusion with [computerender](https://computerender.com).  
+Style video using stable diffusion with [computerender](https://computerender.com).  
 
 
 ![example](https://i.imgur.com/FMd9RvH.gif)
