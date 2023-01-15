@@ -41,5 +41,10 @@ It is a good idea to first create a short, trimmed version of your video that's 
 This will be helpful for tuning parameters to get the right amount of modification to your video.
 Most importantly, the "strength" parameter will determine how much influence the effect has.
 
+Run the script:
+```bash
+python vid2vid.py
+```
+
 ## 4. Post processing
 To produce the final output, the video was import into adobe premiere and slowed using "optical flow" as the frame interpolation. It may be possible to achieve the same effect using opencv, but that is not covered in this tutorial.
