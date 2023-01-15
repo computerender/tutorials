@@ -1,7 +1,3 @@
-# you will also need to install ffmpeg
-# linux - apt install ffmpeg
-# macos - brew install ffmpeg
-# windows - https://ffmpeg.org/download.html
 numpy
 Pillow
 tqdm
