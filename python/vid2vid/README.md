@@ -2,8 +2,6 @@
   
 Style video using stable diffusion with [computerender](https://computerender.com).  
 
-
-![example](https://i.imgur.com/FMd9RvH.gif)
 <img src="/python/vid2vid/example.gif?raw=true" width="384px">
 
 ## 1. Setup
