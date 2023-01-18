@@ -45,4 +45,16 @@ python vid2vid.py
 ```
 
 ## 4. Post processing
-To produce the final output, the video was import into adobe premiere and slowed using "optical flow" as the frame interpolation. It may be possible to achieve the same effect using opencv, but that is not covered in this tutorial.
+To produce the final output, the video was imported into adobe premiere and slowed using "optical flow" as the frame interpolation. It is also possible to do this optical flow interpolation using ffmpeg. 
+Following the method used in this article:  
+https://blog.programster.org/ffmpeg-create-smooth-videos-with-frame-interpolation  
+One can do:  
+```bash
+ffmpeg \
+  -i sd-output.mp4 \
+  -crf 10 \
+  -vf "minterpolate=fps=60:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1" \
+  sd-output-smooth.mp4
+```
+You may need to first edit the speed or framerate of the video to get good results this way.
+
