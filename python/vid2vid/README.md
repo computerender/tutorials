@@ -2,7 +2,7 @@
   
 Style video using stable diffusion with [computerender](https://computerender.com).  
 
-<img src="/python/vid2vid/example.gif?raw=true" width="384px">
+<img src="/python/vid2vid/example.gif?raw=true" width="768px">
 
 ## 1. Setup
 You can install the python dependencies by running:
