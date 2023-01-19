@@ -2,7 +2,7 @@
   
 Spinning zoom effect using stable diffusion via [computerender](https://computerender.com).  
 
-<img src="/python/vid2vid/spin-zoom.gif?raw=true" width="384px">
+<img src="/python/spin-zoom/spin-zoom.gif?raw=true" width="384px">
 
 ## 1. Setup
 You can install the python dependencies by running:
