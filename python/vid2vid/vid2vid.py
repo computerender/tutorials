@@ -6,13 +6,13 @@ from PIL import Image
 import numpy as np
 from mediapy import VideoReader, VideoWriter
 
-input_file = "IMG_0068.MOV"
+input_file = "IMG_0068.MOV" # <-- put your video here
 output_file = "sd-output.mp4"
-prompt = "a robot playing the guitar in a futuristic room, photograph, artstation"
-iterations = 35
-strength = 0.45
-seed = 200
-guidance = 13.0
+prompt = "a royal prince playing the guitar in magnificent room, victorian painting, highly detailed"
+strength = 0.5 # How strong the styling effect should be (range 0.1-1.0)
+seed = 200 # Change this to get a different generation using the same parameters
+guidance = 13.0 # How much the model should try to stick to the prompt (range 0-20)
+iterations = 50
 output_res = (512,512)
 out_r = (output_res[1], output_res[0])
 parallel_jobs = 4
