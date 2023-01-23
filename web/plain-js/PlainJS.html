@@ -1,0 +1,72 @@
+<script src="https://cdn.tailwindcss.com"></script>
+<body class="bg-black">
+    <div class="text-gray-300 text-lg flex justify-center mt-2">
+    Example using the &nbsp;
+    <a href="https://computerender.com"><u>computerender</u></a>
+    &nbsp;API in a webpage with no libraries, just plain JS.
+    </div>
+    <div class="flex justify-center">
+    <div class="flex items-center m-2">
+    <input type="text" class="bg-gray-50 border m-2 border-gray-300 text-sm text-center rounded-lg focus:ring-blue-500 focus:border-blue-500 w-60 p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" id="keybox" placeholder="enter api key" value="">
+    <input type="text" class="bg-gray-50 text-center border m-2 border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 w-60 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" id="promptbox" placeholder="enter prompt" value="">
+    <button id="genbutton" class="px-6 py-2 max-h-10 mx-4 text-violet-100 bg-violet-700 rounded-2xl hover:bg-violet-500 disabled:bg-slate-400 disabled:text-slate-500">
+    <b>Generate</b>
+    </button>
+    </div>
+    </div>
+    <p class="text-red-400 text-center" id="message">
+    </p>
+    <img src="" id="img" class="object-center mx-auto">
+</body>
+<script>
+
+    function fetchWithAuthentication(url, apiKey) {
+        const headers = new Headers();
+        headers.set('Authorization', `X-API-Key ${apiKey}`);
+        return fetch(url, { headers });
+    }
+
+    async function generateImage(imageElement, imageUrl, apiKey) {
+        // Fetch the image.
+        const res = await fetchWithAuthentication(
+            imageUrl, apiKey
+        );
+        if (res.ok) {
+            // Create an object URL from the data.
+            const blob = await res.blob();
+            const objectUrl = URL.createObjectURL(blob);
+            // Update the source of the image.
+            imageElement.src = objectUrl;
+            imageElement.onload = () => URL.revokeObjectURL(objectUrl);
+        } else {
+            const e = await res.text();
+            throw new Error(e);
+        }
+    }
+
+    const textBox = document.getElementById("promptbox");
+    const message = document.getElementById("message");
+    const keyBox = document.getElementById("keybox");
+    const img = document.getElementById("img");
+    const button = document.getElementById("genbutton");
+
+    function updateImage() {
+    const desc = encodeURIComponent(textBox.value);
+    const url = `https://api.computerender.com/generate/${desc}.jpg`;
+    const key = keyBox.value;
+    button.disabled = true;
+    generateImage(img, url, key)
+        .then(() => {
+        message.innerHTML = "";
+        })
+        .catch((e) => {
+            message.innerHTML = e;
+        })
+        .finally(() => {
+            button.disabled = false;
+        });
+    }
+
+    button.onclick = updateImage;
+
+</script>
