@@ -12,4 +12,4 @@ Examples using the [computerender](https://computerender.com) API
 ## Web
 
 - [plain-js](web/plain-js/)
-<img src="/web/plain-js/screenshot.png?raw=true" width="768px">
+<img src="/web/plain-js/screenshot.png?raw=true" width="512px">
