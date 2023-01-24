@@ -11,7 +11,8 @@ You can install the python dependencies by running:
 pip install -r requirements.txt
 ```
 
-To install install ffmpeg:
+Install ffmpeg for:  
+  
 Linux
 ```bash
 apt install ffmpeg
